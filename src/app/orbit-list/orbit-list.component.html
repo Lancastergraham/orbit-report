@@ -7,7 +7,7 @@
       <th>Orbit Type</th>
       <th>Launch Date</th>
    </tr>
-   <tr *ngFor="let trusty of satellites">
+   <tr *ngFor="let trusty of satellites; let i = index" [ngClass]="{'zebra': i % 2 === 0}">
     <td>{{trusty.name}}</td>
     <td [class.warning] = "trusty.shouldShowWarning() === true">{{trusty.type}}</td>
     <td>{{trusty.operational}}</td>
